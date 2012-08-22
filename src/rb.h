@@ -1,5 +1,6 @@
 /******************************************************************************
  *
+ * Copyright (C) 2008 Jason Evans <jasone@FreeBSD.org>.
  * Copyright (c) 2008-2012 Hewlett-Packard Development Company, L.P.
  * All rights reserved.
  *

@@ -3,11 +3,11 @@ jemalloc
 
 Summary
 -------
-The version of jemalloc used in Open webOS
+The version of _jemalloc_ used in Open webOS
 
 Description
 -----------
-This is a minimal-effort stand-alone jemalloc distribution for Linux.  The main
+This is a minimal-effort stand-alone _jemalloc_ distribution for Linux.  The main
 rough spots are:
 
 * __isthreaded must be hard-coded, since the pthreads library really needs to
@@ -32,7 +32,7 @@ rough spots are:
 Dependencies
 ============
 
-Below are the tools and libraries (and their minimum versions) required to build jemalloc:
+Below are the tools (and their minimum versions) required to build _jemalloc_:
 
 - cmake (version required by cmake-modules-webos)
 - gcc 4.6.3
@@ -74,23 +74,25 @@ To see a list of the make targets that <tt>cmake</tt> has generated, enter:
 
     $ make help
 
+To enable HEAP_TRACKING feature pass the value of CMAKE_C_FLAGS set as -DHEAP_TRACKING as follows:
+
+    $ cmake -D CMAKE_C_FLAGS=-DHEAP_TRACKING ..
+
 ## Uninstalling
 
-From the directory where you originally ran <tt>make install<tt>, enter:
+From the directory where you originally ran <tt>make install<\tt>, enter:
 
     $ [sudo] make uninstall
 
 You will need to use <tt>sudo</tt> if you did not specify <tt>WEBOS\_INSTALL\_ROOT</tt>.
 
-To enable HEAP_TRACKING feature pass the value of CMAKE_C_FLAGS set as -DHEAP_TRACKING as follows:
-
-    $ cmake -D CMAKE_C_FLAGS=-DHEAP_TRACKING ..
-
 # Copyright and License Information
 
+Copyright (C) 2008 Jason Evans <jasone@FreeBSD.org>.
 Copyright (c) 2008-2012 Hewlett-Packard Development Company, L.P.
 All rights reserved.
 
+Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
  1. Redistributions of source code must retain the above copyright
