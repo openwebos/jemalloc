@@ -93,6 +93,9 @@ You will need to use `sudo` if you did not specify `WEBOS_INSTALL_ROOT`.
 
 # Copyright and License Information
 
+Unless otherwise specified, all content, including all source code files and
+documentation files in this repository are:
+
 Copyright (C) 2008 Jason Evans <jasone@FreeBSD.org>.
 Copyright (c) 2008-2012 Hewlett-Packard Development Company, L.P.
 All rights reserved.
