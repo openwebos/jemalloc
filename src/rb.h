@@ -1,7 +1,7 @@
 /******************************************************************************
  *
  * Copyright (C) 2008 Jason Evans <jasone@FreeBSD.org>.
- * Copyright (c) 2008-2012 Hewlett-Packard Development Company, L.P.
+ * Copyright (c) 2008-2013 LG Electronics, Inc.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
