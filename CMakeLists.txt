@@ -40,11 +40,20 @@ webos_build_pkgconfig(files/pkgconfig/jemalloc_mt)
 
 webos_add_compiler_flags(ALL -g -DMALLOC_PRODUCTION)
 
+find_package(Threads REQUIRED)
+# to detect missing -lpthread sooner rather than later
+# otherwise there is risk of linking against hidden or
+# purged pthread_atfork symbol (detected while building filecache)
+# see http://ryanarn.blogspot.cz/2011/07/curious-case-of-pthreadatfork-on.html
+webos_add_linker_options(ALL --no-undefined)
+
 add_library(jemalloc SHARED src/jemalloc_linux.c src/jemalloc_wrapper.c)
+target_link_libraries(jemalloc ${CMAKE_THREAD_LIBS_INIT})
 set_property(TARGET jemalloc PROPERTY COMPILE_DEFINITIONS __isthreaded=false)
 webos_build_library(NAME jemalloc NOHEADERS) 
 
 add_library(jemalloc_mt SHARED src/jemalloc_linux.c src/jemalloc_wrapper.c)
+target_link_libraries(jemalloc_mt ${CMAKE_THREAD_LIBS_INIT})
 set_property(TARGET jemalloc_mt PROPERTY COMPILE_DEFINITIONS __isthreaded=true)
 webos_build_library(NAME jemalloc_mt NOHEADERS) 
 
